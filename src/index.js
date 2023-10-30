@@ -9,21 +9,22 @@ const app = express();
 //     origin: ['https://cubos.academy/', 'https://google.com']
 // }))
 
-app.use(cors)
+app.use(cors())
 app.use(express.json());
 
 
-// app.get('/', async (req, res) => {
-//     return res.status(200).json('Api esta ok!')
-// })
+app.get('/teste', async (req, res) => {
+    const teste = "('Api esta ok!')"
+    return res.status(200).json(teste)
+})
 
-app.get("/", async (req, res) => {
+app.get("/carros", async (req, res) => {
     try {
         const carros = await knex('carros');
         return res.status(200).json(carros);
     } catch (error) {
         console.log(error);
-        return res.status(500).json({ mensagem: "Erro do servidor <>" })
+        return res.status(500).json({ mensagem: "Erro do servidor" })
     }
 })
 
