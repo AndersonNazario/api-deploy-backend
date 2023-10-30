@@ -13,11 +13,11 @@ app.use(cors)
 app.use(express.json());
 
 
-app.get('/', async (req, res) => {
-    return res.status(200).json('Api esta ok!')
-})
+// app.get('/', async (req, res) => {
+//     return res.status(200).json('Api esta ok!')
+// })
 
-app.get("/carros", async (req, res) => {
+app.get("/", async (req, res) => {
     try {
         const carros = await knex('carros');
         return res.status(200).json(carros);
