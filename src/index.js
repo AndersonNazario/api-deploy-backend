@@ -23,7 +23,7 @@ app.get("/carros", async (req, res) => {
         return res.status(200).json(carros);
     } catch (error) {
         console.log(error);
-        return res.status(500).json({ mensagem: "Erro do servidor" })
+        return res.status(500).json({ mensagem: "Erro do servidor <>" })
     }
 })
 
