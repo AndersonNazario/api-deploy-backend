@@ -13,9 +13,8 @@ app.use(cors())
 app.use(express.json());
 
 
-app.get('/teste', async (req, res) => {
-    const teste = "('Api esta ok!')"
-    return res.status(200).json(teste)
+app.get('/', async (req, res) => {
+    return res.status(200).json('Api esta ok!')
 })
 
 app.get("/carros", async (req, res) => {
